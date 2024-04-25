@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Perhitungan Pajak</title>
+    <script>
+        function hitungTHR(){
+            var gajipokok = parseFloat(document.getElementById("gajipokok").value);
+            var tunjangantetap = parseFloat(document.getElementById("tunjangan").value);
+            var masakerja = parseInt(document.getElementById("Masa Kerja").value);
+            var output = document.getElementById("output");
+            output.innerHTML = "Pegawai dengan gaji pokok sebesar" + gajipokok + "dan tunjangan tetap sebesar" + tunjangantetap + 
+            "memiliki masa kerja sebanyak" + masakerja + "bulan";
+
+            var thr = 0;
+                if (masaKerja >= 12) {
+                    thr = gajiPokok + tunjanganTetap;
+                } else if (masaKerja >=0 && masaKerja < 12) {
+                    thr = (masakerja/12)*totalgaji;
+                } else
+                    thr = 0;
+                }
+            var pph = 0;
+            if (totalgaji>4500000){
+                pph= (5/100)*totalgaji;
+            }else
+            
+            var totalPembayaran = thr+pph;
+            document.getElementById("Hasil").innerHTML=
+            "PPH :" + pph +
+            "THR: " + thr +
+            "Totak Pembayaran:" + totalPembayaran; 
+
+
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+    </script>
+    <form>
+        <h2>Program Perhitungan THR</h2>
+        <label for="gajipokok">Gaji Pokok : </label><br>
+        <input type="number" id="gajipokok" name = "gajipokok"><br>
+        <label for="tunjangan">Tunjangan Tetap : </label><br>
+        <input type="number" id="tunjangan" name = "tunjangan"><br>
+        <label for="masakerja">Masa Kerja : </label><br>
+        <input type="number" id="masakerja" name = "masakerja"><br>
+        <button type = "button">Tekan</button>
+        <p id="output"></p>
+
+        <button onclik="Hasil"></button>
+    </form>
+</body>
+</html>
